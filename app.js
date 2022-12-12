@@ -23,10 +23,10 @@ if (dev_env === "development") {
   });
 }
 
-ipcMain.on("notification", (event, message) => {
+ipcMain.on("notification", (event, title, message) => {
   new Notification({
-    title: "A notification is here",
-    body: "A new notification is displayed using electron api",
+    title: title,
+    body: message,
   }).show();
 });
 
